@@ -1,6 +1,6 @@
-namespace dominio;
+// namespace dominio;
 
-public class Visualizacao
-{
-    public int Id { get; set; }
-}
+// public class Visualizacao
+// {
+//     public int Id { get; set; }
+// }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "EcbAx3jSoqLIoamqmCHgJxUCeTmYY2wZ/3cWUuS3Y1zfP9Bg07hEMNhL3zn3aAwO52kue+8KlsXvxbYHrAAAbQ==",
+  "dgSpecHash": "kbvBQ3Zd6dedZ0GRaj2m22BkiQUMlqxMoo6hKt3khFrbKNaM7ZPbIqcTwhkbi1XF7yajIWeGBbGG7x9LKe5OCg==",
   "success": true,
-  "projectFilePath": "C:\\React\\MeuProjeto\\movie_backend\\dominio\\dominio.csproj",
+  "projectFilePath": "C:\\Users\\Marcus\\Documents\\projeto_movieAPI\\MeuProjeto\\movie_backend\\dominio\\dominio.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

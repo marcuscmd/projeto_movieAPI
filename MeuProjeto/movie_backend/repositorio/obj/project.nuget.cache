@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/ngu8gTleShf9iyeqKo7RUdLjSE5vrPI3bQxapwo3NwFkGX2Ob8MDER4YBoLYg/fPk2g4ZmsI7+tMew18MM8bQ==",
+  "dgSpecHash": "YPtt8Dj0bmYr47V+SgQAlo0wkf/lzAGnODCm1JKz9q2So0j+PWnvACbuwX/xl7012P9C3pQm0E2qiIDa+TBPgA==",
   "success": true,
-  "projectFilePath": "C:\\React\\MeuProjeto\\movie_backend\\repositorio\\repositorio.csproj",
+  "projectFilePath": "C:\\Users\\Marcus\\Documents\\projeto_movieAPI\\MeuProjeto\\movie_backend\\repositorio\\repositorio.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Marcus\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Marcus\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

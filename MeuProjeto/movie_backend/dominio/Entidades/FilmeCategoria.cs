@@ -1,6 +1,6 @@
-namespace dominio;
+// namespace dominio;
 
-public class FilmeCategoria
-{
-    public int Id { get; set; }
-}
+// public class FilmeCategoria
+// {
+//     public int Id { get; set; }
+// }
