@@ -1,4 +1,5 @@
 import Modal from 'react-modal';
+import googleImg from '../assets/google.png'
 import { Container } from './styles';
 
 
@@ -13,9 +14,14 @@ export function ModalLogin({ isOpen, onRequestClose }) {
                 <h2>Login</h2>
 
                 <input placeholder="Email" />
-                <input type="password" />
+                <input type="password" placeholder="Password"/>
 
-                <button type="submit" >Entrar</button>
+                <button type="submit" >Log in</button>
+                <p>Não possui conta? Clique Aqui</p>
+                <button type="submit" className='buton-google'>
+                    <img src={googleImg} alt="google" />
+                    Log in with Google
+                    </button>
 
             </Container>
         </Modal>
