@@ -20,9 +20,52 @@ public class Usuarioaplicacao
         return await _user.AddAsync(usuario);
     }
 
-    
+    public async void AtualizarSenha(Usuario usuario, string senhaAntiga)
+    {
+        var userId = await _user.GetByIdAsync(usuario.Id);
+        if (userId == null)
+            throw new Exception("Usuario não encontrado");
+        if (userId.Senha != senhaAntiga)
+            throw new Exception("Senha antiga invalida");
 
+        userId.Senha = usuario.Senha;
 
+        await _user.UpdateAsync(userId);
+    }
+
+    public async Task<Usuario> ObterUser(int id)
+    {
+        var userId = await _user.GetByIdAsync(id);
+        if (userId == null)
+            throw new Exception("Usuario não encontrado");
+
+        return userId;
+    }
+
+    public async void Deletar(int id)
+    {
+        var userId = await _user.GetByIdAsync(id);
+        if (userId == null)
+            throw new Exception("Usuario não encontrado");
+
+        userId.Deletar();
+        await _user.UpdateAsync(userId);
+    }
+
+    public async void Restaurar(int id)
+    {
+        var userId = await _user.GetByIdAsync(id);
+        if (userId == null)
+            throw new Exception("Usuario não encontrado");
+
+        userId.Restaurar();
+        await _user.UpdateAsync(userId);
+    }
+
+    public async Task<IEnumerable<Usuario>> GetAll(bool ativo)
+    {
+        return await _user.GetAllAsync(ativo);
+    }
 
 
     private void ValidarInformacoesUseario(Usuario usuario)

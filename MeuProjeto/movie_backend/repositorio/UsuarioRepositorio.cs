@@ -29,9 +29,9 @@ public class UsuarioRepositorio : IGernericoRepositorio<Usuario>
         return await _contexto.Set<Usuario>().Where(predicate).ToListAsync();
     }
 
-    public async Task<IEnumerable<Usuario>> GetAllAsync()
+    public async Task<IEnumerable<Usuario>> GetAllAsync(bool ativo = true)
     {
-       return await _contexto.Set<Usuario>().ToListAsync();
+       return await _contexto.Set<Usuario>().Where(x => x.Ativo == ativo).ToListAsync();
     }
 
     public async Task<Usuario> GetByIdAsync(int id)

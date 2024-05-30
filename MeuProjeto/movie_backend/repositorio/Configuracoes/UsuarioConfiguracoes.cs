@@ -16,6 +16,7 @@ public class UsuarioConfiguracoes : IEntityTypeConfiguration<Usuario>
         builder.Property(x => x.Senha).HasColumnName("Senha");
         builder.Property(x => x.Nome).HasColumnName("Nome");
         builder.Property(x => x.Sobrenome).HasColumnName("Sobrenome");
+        builder.Property(x => x.Ativo).HasColumnName("Ativo");
         builder.Property(x => x.CreatedAt).HasColumnName("CreatedAt");
         builder.Property(x => x.GoogleID).HasColumnName("GoogleId");
     }
