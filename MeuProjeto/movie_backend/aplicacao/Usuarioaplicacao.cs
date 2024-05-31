@@ -1,9 +1,10 @@
 using dominio;
+using InterfaceRepositorio;
 
-public class Usuarioaplicacao
+public class UsuarioAplicacao : IUsuarioAplicacao
 {
-    readonly UsuarioRepositorio _user;
-    public Usuarioaplicacao(UsuarioRepositorio user)
+    private readonly IUsuarioRepositorio _user;
+    public UsuarioAplicacao(IUsuarioRepositorio user)
     {
         _user = user;
     }
@@ -33,7 +34,7 @@ public class Usuarioaplicacao
         await _user.UpdateAsync(userId);
     }
 
-    public async Task<Usuario> ObterUser(int id)
+    public async Task<Usuario> ObterUsuario(int id)
     {
         var userId = await _user.GetByIdAsync(id);
         if (userId == null)
@@ -79,4 +80,5 @@ public class Usuarioaplicacao
         if (string.IsNullOrWhiteSpace(usuario.Email))
             throw new Exception("E-mail não pode ser vazio!");
     }
+
 }

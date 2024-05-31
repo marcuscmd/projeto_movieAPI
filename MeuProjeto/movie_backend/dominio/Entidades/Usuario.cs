@@ -15,6 +15,7 @@ public class Usuario
     public Usuario()
     {
         Ativo = true;
+        CreatedAt = DateTime.Now;
     }
 
     public void Deletar()

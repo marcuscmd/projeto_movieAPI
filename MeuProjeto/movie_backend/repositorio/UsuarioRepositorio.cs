@@ -2,7 +2,7 @@ using System.Linq.Expressions;
 using dominio;
 using InterfaceRepositorio;
 using Microsoft.EntityFrameworkCore;
-public class UsuarioRepositorio : IGernericoRepositorio<Usuario>
+public class UsuarioRepositorio : IUsuarioRepositorio
 {
     private readonly Contexto _contexto;
     public UsuarioRepositorio(Contexto contexto)
@@ -37,11 +37,11 @@ public class UsuarioRepositorio : IGernericoRepositorio<Usuario>
     public async Task<Usuario> GetByIdAsync(int id)
     {
         var user = await _contexto.Set<Usuario>().FindAsync(id);
-        if (user != null)
+        if (user == null)
         {
-            return user;
+            return null;
         }
-        return null;
+        return user;
     }
 
     public async Task UpdateAsync(Usuario entity)
