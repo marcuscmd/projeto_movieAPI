@@ -44,7 +44,7 @@ public class UsuarioRepositorio : IUsuarioRepositorio
         return user;
     }
 
-    public async Task UpdateAsync(Usuario entity)
+    public async void UpdateAsync(Usuario entity)
     {
         _contexto.Set<Usuario>().Update(entity);
         await _contexto.SaveChangesAsync();

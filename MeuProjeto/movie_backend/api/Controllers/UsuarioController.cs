@@ -1,4 +1,5 @@
 using dominio;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace api;
@@ -37,6 +38,29 @@ public class UsuarioController : ControllerBase
         }
     }
 
+    [HttpGet]
+    [Route("BuscarTodos")]
+    public async Task<ActionResult> GetAll([FromQuery] bool ativo)
+    {
+        try
+        {
+            var list = await _userAplicacao.GetAll(ativo);
+            List<UsuarioResposta> listUsuario = list.Select(x => new UsuarioResposta()
+            {
+                Nome = x.Nome,
+                Sobrenome = x.Sobrenome,
+                Nome_Usuario = x.Nome_Usuario,
+                Email = x.Email
+            }).ToList();
+
+            return Ok(listUsuario);
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message);
+        }
+    }
+
     [HttpPost]
     [Route("Add")]
     public async Task<ActionResult> AddUsuario([FromBody] CriarUsuario usuario)
@@ -60,4 +84,62 @@ public class UsuarioController : ControllerBase
             return BadRequest(ex.Message);
         }
     }
+
+
+    [HttpPut]
+    [Route("Update/{id}")]
+    public ActionResult UpdateUsuario([FromBody] AtualizarUsuario usuario)
+    {
+        try
+        {
+            var usuarioId = new Usuario()
+            {
+                Nome_Usuario = usuario.Nome_Usuario,
+                Nome = usuario.Nome,
+                Sobrenome = usuario.Sobrenome,
+                Email = usuario.Email,
+            };
+            _userAplicacao.Atualizar(usuarioId);
+            return Ok();
+
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message);
+        }
+
+    }
+
+    [HttpDelete]
+    [Route("Desativar/{id}")]
+    public ActionResult Desativar([FromRoute] int id)
+    {
+        try
+        {
+            _userAplicacao.Deletar(id);
+            return Ok();
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message);
+        }
+    }
+
+
+    [HttpPut]
+    [Route("Ativar/{id}")]
+    public ActionResult Ativar([FromRoute] int id)
+    {
+        try
+        {
+            _userAplicacao.Deletar(id);
+            return Ok();
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message);
+        }
+    }
+
+
 }

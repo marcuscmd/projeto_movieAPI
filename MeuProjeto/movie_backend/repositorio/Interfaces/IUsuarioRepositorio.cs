@@ -8,6 +8,6 @@ public interface IUsuarioRepositorio
     Task<IEnumerable<Usuario>> GetAllAsync(bool ativo);
     Task<IEnumerable<Usuario>> FindAsync(Expression<Func<Usuario, bool>> predicate);
     Task<int> AddAsync(Usuario entity);
-    Task UpdateAsync(Usuario entity);
+    void UpdateAsync(Usuario entity);
     Task DeleteAsync(Usuario entity);
 }
