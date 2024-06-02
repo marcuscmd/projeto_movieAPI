@@ -31,12 +31,12 @@ public class UsuarioAplicacao : IUsuarioAplicacao
 
         userId.Senha = usuario.Senha;
 
-        _user.UpdateAsync(userId);
+        await _user.UpdateAsync(userId);
     }
 
     public async void Atualizar(Usuario usuario)
     {
-        var userId =  await _user.GetByIdAsync(usuario.Id);
+        var userId = await _user.GetByIdAsync(usuario.Id);
         if (userId == null)
             throw new Exception("Usuario não encontrado");
         ValidarInformacoesUseario(usuario);
@@ -46,7 +46,7 @@ public class UsuarioAplicacao : IUsuarioAplicacao
         userId.Sobrenome = usuario.Sobrenome;
         userId.Email = usuario.Email;
 
-        _user.UpdateAsync(userId);
+        await _user.UpdateAsync(userId);
     }
 
     public async Task<Usuario> ObterUsuario(int id)
@@ -58,24 +58,37 @@ public class UsuarioAplicacao : IUsuarioAplicacao
         return userId;
     }
 
-    public async void Deletar(int id)
+    public async Task<Usuario> ObterEmail(string email)
     {
-        var userId =  await _user.GetByIdAsync(id);
+        var userId = await _user.FindEmailAsync(email);
+        if (userId == null)
+            throw new Exception("Usuario não encontrado");
+
+        return userId;
+    }
+
+    public async Task<bool> Deletar(int id)
+    {
+        var userId = await _user.GetByIdAsync(id);
         if (userId == null)
             throw new Exception("Usuario não encontrado");
 
         userId.Deletar();
-        _user.UpdateAsync(userId);
+        var result = await _user.UpdateAsync(userId);
+
+        return true;
     }
 
-    public async void Restaurar(int id)
+    public async Task<bool> Restaurar(int id)
     {
         var userId = await _user.GetByIdAsync(id);
         if (userId == null)
             throw new Exception("Usuario não encontrado");
 
         userId.Restaurar();
-        _user.UpdateAsync(userId);
+        await _user.UpdateAsync(userId);
+
+        return true;
     }
 
     public async Task<IEnumerable<Usuario>> GetAll(bool ativo)
