@@ -1,5 +1,6 @@
 public class AtualizarUsuario
 {
+    public int Id { get; set; }
     public string Nome_Usuario { get; set; }
     public string Email { get; set; }
     public string Nome { get; set; }

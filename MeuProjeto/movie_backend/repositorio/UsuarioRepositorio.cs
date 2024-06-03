@@ -19,7 +19,7 @@ public class UsuarioRepositorio : BaseRepositorio, IUsuarioRepositorio
     public async Task<bool> UpdateAsync(Usuario entity)
     {
 
-        _contexto.Set<Usuario>().Update(entity);
+        _contexto.Usuarios.Update(entity);
         await _contexto.SaveChangesAsync();
 
         return true;
@@ -43,10 +43,9 @@ public class UsuarioRepositorio : BaseRepositorio, IUsuarioRepositorio
 
     public async Task<Usuario> GetByIdAsync(int id, bool ativo = true)
     {
-
         return await _contexto.Usuarios.Where(x => x.Id == id)
-                                        .Where(x => x.Ativo == ativo)
-                                        .FirstOrDefaultAsync();
+                            .Where(x => x.Ativo == ativo)
+                            .FirstOrDefaultAsync();
     }
 
     public async Task<Usuario> FindEmailAsync(string email)

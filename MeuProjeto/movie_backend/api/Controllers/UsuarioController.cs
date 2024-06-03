@@ -87,19 +87,20 @@ public class UsuarioController : ControllerBase
 
 
     [HttpPut]
-    [Route("Update/{id}")]
-    public ActionResult UpdateUsuario([FromBody] AtualizarUsuario usuario)
+    [Route("Update")]
+    public async Task<ActionResult> UpdateUsuario([FromBody] AtualizarUsuario usuario)
     {
         try
         {
             var usuarioId = new Usuario()
             {
+                Id = usuario.Id,
                 Nome_Usuario = usuario.Nome_Usuario,
                 Nome = usuario.Nome,
                 Sobrenome = usuario.Sobrenome,
                 Email = usuario.Email,
             };
-            _userAplicacao.Atualizar(usuarioId);
+            await _userAplicacao.Atualizar(usuarioId);
             return Ok();
 
         }
@@ -108,6 +109,26 @@ public class UsuarioController : ControllerBase
             return BadRequest(ex.Message);
         }
 
+    }
+
+    [HttpPut]
+    [Route("UpdateSenha")]
+    public async Task<ActionResult> UpdateSenha([FromBody] AtualizarSenhaUsuario usuario)
+    {
+        try
+        {
+            var usuarioSenha = new Usuario()
+            {
+                Id = usuario.Id,
+                Senha = usuario.Senha,
+            };
+            await _userAplicacao.AtualizarSenha(usuarioSenha, usuario.SenhaAntiga);
+            return Ok();
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message);
+        }
     }
 
     [HttpDelete]
