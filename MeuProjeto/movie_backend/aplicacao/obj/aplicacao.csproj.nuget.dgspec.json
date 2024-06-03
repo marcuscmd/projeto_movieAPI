@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Marcus\\Documents\\projeto_movieAPI\\MeuProjeto\\movie_backend\\aplicacao\\aplicacao.csproj": {}
+    "C:\\Users\\Marcus\\Documents\\projeto_movieAPI\\MeuProjeto\\movie_backend\\aplicacao\\aplicacao.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Marcus\\Documents\\projeto_movieAPI\\MeuProjeto\\movie_backend\\aplicacao\\aplicacao.csproj": {
+    "C:\\Users\\Marcus\\Documents\\projeto_movieAPI\\MeuProjeto\\movie_backend\\aplicacao\\aplicacao.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Marcus\\Documents\\projeto_movieAPI\\MeuProjeto\\movie_backend\\aplicacao\\aplicacao.csproj",
+        "projectUniqueName": "C:\\Users\\Marcus\\Documents\\projeto_movieAPI\\MeuProjeto\\movie_backend\\aplicacao\\aplicacao.csproj",
         "projectName": "aplicacao",
-        "projectPath": "c:\\Users\\Marcus\\Documents\\projeto_movieAPI\\MeuProjeto\\movie_backend\\aplicacao\\aplicacao.csproj",
+        "projectPath": "C:\\Users\\Marcus\\Documents\\projeto_movieAPI\\MeuProjeto\\movie_backend\\aplicacao\\aplicacao.csproj",
         "packagesPath": "C:\\Users\\Marcus\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Marcus\\Documents\\projeto_movieAPI\\MeuProjeto\\movie_backend\\aplicacao\\obj\\",
+        "outputPath": "C:\\Users\\Marcus\\Documents\\projeto_movieAPI\\MeuProjeto\\movie_backend\\aplicacao\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Marcus\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -31,8 +31,8 @@
               "C:\\Users\\Marcus\\Documents\\projeto_movieAPI\\MeuProjeto\\movie_backend\\dominio\\dominio.csproj": {
                 "projectPath": "C:\\Users\\Marcus\\Documents\\projeto_movieAPI\\MeuProjeto\\movie_backend\\dominio\\dominio.csproj"
               },
-              "c:\\Users\\Marcus\\Documents\\projeto_movieAPI\\MeuProjeto\\movie_backend\\repositorio\\repositorio.csproj": {
-                "projectPath": "c:\\Users\\Marcus\\Documents\\projeto_movieAPI\\MeuProjeto\\movie_backend\\repositorio\\repositorio.csproj"
+              "C:\\Users\\Marcus\\Documents\\projeto_movieAPI\\MeuProjeto\\movie_backend\\repositorio\\repositorio.csproj": {
+                "projectPath": "C:\\Users\\Marcus\\Documents\\projeto_movieAPI\\MeuProjeto\\movie_backend\\repositorio\\repositorio.csproj"
               }
             }
           }
@@ -121,14 +121,14 @@
         }
       }
     },
-    "c:\\Users\\Marcus\\Documents\\projeto_movieAPI\\MeuProjeto\\movie_backend\\repositorio\\repositorio.csproj": {
+    "C:\\Users\\Marcus\\Documents\\projeto_movieAPI\\MeuProjeto\\movie_backend\\repositorio\\repositorio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Marcus\\Documents\\projeto_movieAPI\\MeuProjeto\\movie_backend\\repositorio\\repositorio.csproj",
+        "projectUniqueName": "C:\\Users\\Marcus\\Documents\\projeto_movieAPI\\MeuProjeto\\movie_backend\\repositorio\\repositorio.csproj",
         "projectName": "repositorio",
-        "projectPath": "c:\\Users\\Marcus\\Documents\\projeto_movieAPI\\MeuProjeto\\movie_backend\\repositorio\\repositorio.csproj",
+        "projectPath": "C:\\Users\\Marcus\\Documents\\projeto_movieAPI\\MeuProjeto\\movie_backend\\repositorio\\repositorio.csproj",
         "packagesPath": "C:\\Users\\Marcus\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Marcus\\Documents\\projeto_movieAPI\\MeuProjeto\\movie_backend\\repositorio\\obj\\",
+        "outputPath": "C:\\Users\\Marcus\\Documents\\projeto_movieAPI\\MeuProjeto\\movie_backend\\repositorio\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Marcus\\AppData\\Roaming\\NuGet\\NuGet.Config",

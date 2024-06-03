@@ -110,7 +110,7 @@ public class UsuarioController : ControllerBase
 
     }
 
-    [HttpPut]
+    [HttpDelete]
     [Route("Desativar/{id}")]
     public async Task<ActionResult> Desativar([FromRoute] int id)
     {
@@ -128,11 +128,11 @@ public class UsuarioController : ControllerBase
 
     [HttpPut]
     [Route("Ativar/{id}")]
-    public ActionResult Ativar([FromRoute] int id)
+    public async Task<ActionResult> Ativar([FromRoute] int id)
     {
         try
         {
-            _userAplicacao.Restaurar(id);
+            await _userAplicacao.Restaurar(id);
             return Ok();
         }
         catch (Exception ex)
