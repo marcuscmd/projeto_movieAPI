@@ -1,13 +1,8 @@
 import Modal from 'react-modal';
 import googleImg from '../assets/google.png'
 import { Container } from './styles';
-import { ModalSing } from '../ModalSing';
-import { useState } from 'react';
 
-
-export function ModalLogin({ isOpen, onRequestClose, onSingRequest }) {
-
-    
+export function ModalSing({ isOpen, onRequestClose }) {
     return (
         <Modal isOpen={isOpen}
             onRequestClose={onRequestClose}
@@ -15,16 +10,18 @@ export function ModalLogin({ isOpen, onRequestClose, onSingRequest }) {
             className="react-modal-content"
         >
             <Container>
-                <h2>Login</h2>
+                <h2>Cadastrar</h2>
 
-                <input placeholder="Email" />
+                <input placeholder="Usuario" />
+                <input type="Email" placeholder="Email"/>
                 <input type="password" placeholder="Password"/>
+                <input type="text" placeholder="Nome"/>
+                <input type="text" placeholder="Sobrenome"/>
 
-                <button type="submit" >Log in</button>
-                <p>Não possui conta? Clique <u><a href="#" onClick={onSingRequest}>Aqui</a></u></p>
+                <button type="submit" >Sing in</button>
                 <button type="submit" className='buton-google'>
                     <img src={googleImg} alt="google" />
-                    Log in with Google
+                    Sing in with Google
                     </button>
 
             </Container>

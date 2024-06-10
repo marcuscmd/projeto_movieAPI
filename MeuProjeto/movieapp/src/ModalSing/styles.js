@@ -16,8 +16,6 @@ export const Container = styled.form`
     }
     a {
         cursor: pointer;
-        text-decoration: underline;
-        color: inherit;
     }
 
     input {

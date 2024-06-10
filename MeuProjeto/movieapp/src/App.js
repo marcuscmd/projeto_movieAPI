@@ -2,23 +2,41 @@ import { useState } from "react";
 import { Header } from "./Header/index";
 import { ModalLogin } from "./ModalLogin";
 import { GlobalStyle } from "./styles/global";
+import { ModalSing } from "./ModalSing";
 
 export function App() {
   const [modalLogin, setModalLogin] = useState(false);
+  const [modalSing, setModalSing] = useState(false);
 
-  function OpenMModal(){
+  const OpenModal = () => {
     setModalLogin(true);
+    setModalSing(false);
   }
 
   function CloseModalLogin() {
     setModalLogin(false);
   }
+
+  const OpenSingModal = () => {
+    setModalSing(true);
+    setModalLogin(false);
+  }
+
+  function CloseSing() {
+    setModalSing(false);
+  }
+
+
+
   return (
     <>
-      <Header OpenModal={OpenMModal}/>
+      <Header OpenModal={OpenModal} />
       <ModalLogin isOpen={modalLogin}
+        onSingRequest={OpenSingModal}
         onRequestClose={CloseModalLogin}
-        
+      />
+      <ModalSing isOpen={modalSing}
+        onRequestClose={CloseSing}
       />
       <GlobalStyle />
     </>
