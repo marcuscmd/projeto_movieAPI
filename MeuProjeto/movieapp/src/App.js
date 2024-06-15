@@ -3,6 +3,8 @@ import { Header } from "./Header/index";
 import { ModalLogin } from "./ModalLogin";
 import { GlobalStyle } from "./styles/global";
 import { ModalSing } from "./ModalSing";
+import { Footer } from "./Footer";
+import { Dashboard } from "./Dashboard";
 
 export function App() {
   const [modalLogin, setModalLogin] = useState(false);
@@ -38,6 +40,8 @@ export function App() {
       <ModalSing isOpen={modalSing}
         onRequestClose={CloseSing}
       />
+      <Dashboard />
+      {/* <Footer /> */}
       <GlobalStyle />
     </>
   );

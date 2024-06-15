@@ -5,6 +5,7 @@ export const GlobalStyle = createGlobalStyle`
         --background: #212125;
         --bordas: #5E3535;
         --entrar: #2DFF39;
+        --white: #fff;
     }
 
     *{
