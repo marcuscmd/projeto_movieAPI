@@ -30,6 +30,13 @@ export const Content = styled.div`
     img {
         width: 1.8rem;
         height: 1.8rem;
+        margin: 0.5rem;
+    }
+
+    h4 {
+        margin-bottom: 3.5rem;
+        font-size: 1.5rem;
+        color: #fff;
     }
 
 `;

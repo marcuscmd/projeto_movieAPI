@@ -62,4 +62,9 @@ export const GlobalStyle = createGlobalStyle`
 
         border-radius: 0.3rem;
     }
+
+    .rodape {
+        margin: 0 auto;
+        justify-content: center;
+    }
 `

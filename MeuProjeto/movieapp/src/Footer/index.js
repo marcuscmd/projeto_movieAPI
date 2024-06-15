@@ -1,6 +1,7 @@
 import facebookImg from '../assets/facebook.png';
 import instagraImg from '../assets/instagram.png';
 import youtubeImg from '../assets/youtube.png';
+import '../styles/global';
 import { Container, Content } from './styles';
 
 
@@ -8,7 +9,7 @@ export function Footer({ OpenModal }) {
     return (
         <Container>
             <hr />
-            <div>
+            <div className="rodape">
                 <Content>
                     <h4>MarColaFlix</h4>
                     <div>
@@ -18,15 +19,14 @@ export function Footer({ OpenModal }) {
                     </div>
                 </Content>
                 <Content>
-                    <h4>MarColaFlix</h4>
-                    <div>
-
-                    </div>
+                    <p>Contato</p>
+                    <p>marcuscarvalho0608@gmail.com</p>
+                    <p>marcola@movieflix.br</p>
                 </Content>
                 <Content>
-                    <h4>MarColaFlix</h4>
-                    <div>
-                    </div>
+                    <p>Sobre</p>
+                    <p>Central de Ajuda</p>
+                    <p>Apoiadores</p>
                 </Content>
             </div>
 
