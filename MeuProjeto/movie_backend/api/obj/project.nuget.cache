@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "980HxBz0ErphX5Z2Xwx4jzfdkfNcKJ8uOdLnSK2fDeVjmt7gijyocGtHaqgON8EotmaoDgw7ZSbgoT0mOrSzyg==",
+  "dgSpecHash": "hBwEYRU44RrLL7xKN67IYKUzaLPC50/yNDFG+UeLKjklMMGRQDXUXSfKs57I82Qo2QvuoBMQRw7rjXSciILvZA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Marcus\\Documents\\projeto_movieAPI\\MeuProjeto\\movie_backend\\api\\api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Marcus\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Marcus\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
+    "C:\\Users\\Marcus\\.nuget\\packages\\microsoft.aspnetcore.authentication.google\\7.0.0\\microsoft.aspnetcore.authentication.google.7.0.0.nupkg.sha512",
     "C:\\Users\\Marcus\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.15\\microsoft.aspnetcore.openapi.7.0.15.nupkg.sha512",
     "C:\\Users\\Marcus\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Marcus\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

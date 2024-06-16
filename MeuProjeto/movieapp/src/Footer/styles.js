@@ -39,4 +39,11 @@ export const Content = styled.div`
         color: #fff;
     }
 
+    p {
+        font-size: 0.8rem;
+        color: #fff;
+        margin-bottom: 1rem;
+        margin-top: 0.5rem;
+    }
+
 `;
