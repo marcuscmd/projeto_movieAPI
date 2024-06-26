@@ -17,6 +17,7 @@ public class Contexto : DbContext
     }
 
     public DbSet<Usuario> Usuarios { get; set; }
+    public DbSet<Filme> Filmes { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
@@ -29,5 +30,6 @@ public class Contexto : DbContext
     protected override void OnModelCreating(ModelBuilder builder)
     {
         builder.ApplyConfiguration(new UsuarioConfiguracoes());
+        builder.ApplyConfiguration(new FilmeConfiguracoes());
     }
 }

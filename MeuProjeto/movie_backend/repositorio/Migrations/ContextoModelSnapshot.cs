@@ -21,6 +21,48 @@ namespace repositorio.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("dominio.Filme", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("Id");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("Ano")
+                        .HasColumnType("int")
+                        .HasColumnName("Ano");
+
+                    b.Property<double>("Avaliacao")
+                        .HasColumnType("float")
+                        .HasColumnName("Avaliacao");
+
+                    b.Property<string>("Categoria")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Categoria");
+
+                    b.Property<string>("Descricao")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Descricao");
+
+                    b.Property<string>("Diretor")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Diretor");
+
+                    b.Property<string>("Titulo")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Titulo");
+
+                    b.Property<string>("Url_Image")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Url_Image");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Filmes", (string)null);
+                });
+
             modelBuilder.Entity("dominio.Usuario", b =>
                 {
                     b.Property<int>("Id")
@@ -41,10 +83,6 @@ namespace repositorio.Migrations
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("Email");
-
-                    b.Property<string>("GoogleID")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("GoogleId");
 
                     b.Property<string>("Nome")
                         .HasColumnType("nvarchar(max)")

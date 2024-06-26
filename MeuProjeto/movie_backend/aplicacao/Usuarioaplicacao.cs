@@ -48,7 +48,6 @@ public class UsuarioAplicacao : IUsuarioAplicacao
         userId.Email = usuario.Email;
         userId.CreatedAt = userId.CreatedAt;
         userId.Ativo = true;
-        userId.GoogleID = null;
 
         await _user.UpdateAsync(userId);
 

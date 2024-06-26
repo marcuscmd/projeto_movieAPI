@@ -85,6 +85,36 @@ public class UsuarioController : ControllerBase
         }
     }
 
+    [HttpPut]
+    [Route("Logar")]
+    public async Task<ActionResult> Logar([FromBody] AutenticarUsuario usuario)
+    {
+        try
+        {
+            var list = await _userAplicacao.GetAll(true);
+            List<Usuario> listUsuario = list.Select(x => new Usuario()
+            {
+                Id = x.Id,
+                Nome_Usuario = x.Nome_Usuario,
+                Nome = x.Nome,
+                Sobrenome = x.Sobrenome,
+                Email = x.Email,
+                Senha = x.Senha,
+            }).ToList();
+
+            var usuarioAutenticado = listUsuario.FirstOrDefault(x => x.Email == usuario.Email && x.Senha == usuario.Senha);
+            if (usuarioAutenticado == null)
+                return Unauthorized("Usuário ou senha inválidos.");
+
+            return Ok(new { message = "Login realizado com sucesso." });
+
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message);
+        }
+    }
+
 
     [HttpPut]
     [Route("Update")]
