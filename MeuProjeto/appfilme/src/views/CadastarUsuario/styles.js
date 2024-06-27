@@ -1,18 +1,17 @@
-import styled from 'styled-components';
+import styled from "styled-components"
+
 
 export const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 0.25rem;
-
     height: 70vh;
     min-width: 100vw;
 `
-
 export const Form = styled.form`
     display: flex;
-    padding: 3rem;
+    padding: 2rem 3rem;
     flex-direction: column;
 
     align-items: center;

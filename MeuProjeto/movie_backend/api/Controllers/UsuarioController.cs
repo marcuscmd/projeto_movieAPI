@@ -85,7 +85,7 @@ public class UsuarioController : ControllerBase
         }
     }
 
-    [HttpPut]
+    [HttpPost]
     [Route("Logar")]
     public async Task<ActionResult> Logar([FromBody] AutenticarUsuario usuario)
     {
