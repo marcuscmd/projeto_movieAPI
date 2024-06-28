@@ -8,23 +8,45 @@ import { Input } from "../../components/Input/input";
 import { Botao } from "../../components/Botao/botao";
 import { H2, Container, Form } from "./styles";
 import { BotaoCustom } from "../../components/Botao/styles";
+import userService from "../../services/api";
+
+const user = new userService();
 
 
 export const CadastrarUsuario = () => {
     const [loading, setLoading] = useState(false);
     const [form, setForm] = useState({
+        nome_Usuario: '',
         email: '',
         senha: '',
+        nome: '',
+        sobrenome: '',
     });
     const navigate = useNavigate();
 
 
     const handleChange = (event) => {
         setForm({ ...form, [event.target.name]: event.target.value });
+        console.log('Form', form)
     }
 
-    const validarInput = () => {
-        return ValidarEmail(form.email) && ValidarSenha(form.senha);
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        try {
+            setLoading(true);
+            const response = await user.cadastrar(form);
+            console.log('response', response);
+            if (response) {
+                alert("Usuario Cadastrado com sucesso!");
+                navigate("/")
+            }
+            setLoading(false);
+        } catch (error) {
+            alert("Falha ao cadastrar usuario");
+            setLoading(false);
+        }
+
     }
 
     return (
@@ -32,12 +54,47 @@ export const CadastrarUsuario = () => {
             <Header />
             <H2>Cadastrar Usuario</H2>
             <Container>
-                <Form>
-                    <Input name="NomeUsuario" placeholder="Nome de Usuario" />
-                    <Input name="email" placeholder="E-mail" type="email" />
-                    <Input name="senha" placeholder="Senha" type="password" />
-                    <Input name="nome" placeholder="Nome" type="text" />
-                    <Input name="sobrenome" placeholder="Sobrenome" type="text" />
+                <Form onSubmit={handleSubmit}>
+                    <Input
+                        name='nome_Usuario'
+                        placeholder='Usuario'
+                        onChange={handleChange}
+                        type='text'
+                        value={form.nome_Usuario}
+                        required
+                    />
+                    <Input
+                        name='email'
+                        placeholder='Email'
+                        onChange={handleChange}
+                        type='email'
+                        value={form.email}
+                        required
+                    />
+                    <Input
+                        name='senha'
+                        placeholder='Senha'
+                        onChange={handleChange}
+                        type='password'
+                        value={form.senha}
+                        required
+                    />
+                    <Input
+                        name='nome'
+                        placeholder='Nome'
+                        onChange={handleChange}
+                        type='text'
+                        value={form.nome}
+                        required
+                    />
+                    <Input
+                        name='sobrenome'
+                        placeholder='Sobrenome'
+                        onChange={handleChange}
+                        type='text'
+                        value={form.sobrenome}
+                        required
+                    />
                     <Botao type="submit" text="Cadastrar" />
                 </Form>
             </Container>

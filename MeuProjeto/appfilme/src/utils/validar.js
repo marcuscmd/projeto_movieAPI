@@ -1,5 +1,5 @@
-export const ValidarEmail = (email) => {
-    return email?.toString().includes('@') && email?.toString().includes('.')
+export const ValidarEmail = (nome_Usuario) => {
+    return nome_Usuario?.toString()
 }
 
 export const ValidarSenha = (senha) => {

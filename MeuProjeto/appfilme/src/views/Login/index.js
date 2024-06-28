@@ -14,7 +14,7 @@ const user = new UserService();
 export const Login = () => {
     const[loading, setLoading] = useState(false);
     const [form, setForm] = useState({
-        email: '',
+        nome_Usuario: '',
         senha: '',
     });
     const navigate = useNavigate();
@@ -44,7 +44,7 @@ export const Login = () => {
 
 
     const validarInput = () => {
-        return ValidarEmail(form.email) && ValidarSenha(form.senha);
+        return ValidarEmail(form.nome_Usuario) && ValidarSenha(form.senha);
     }
 
     return (
@@ -55,11 +55,11 @@ export const Login = () => {
                 <Form onSubmit={handleSubmit}>
                     <h1>Login</h1>
                     <Input
-                        name='email'
-                        placeholder='Seu e-mail'
+                        name='nome_Usuario'
+                        placeholder='Usuario'
                         onChange={handleChange}
-                        type='email'
-                        value={form.email}
+                        type='text'
+                        value={form.nome_Usuario}
                         required
                     />
                     <Input

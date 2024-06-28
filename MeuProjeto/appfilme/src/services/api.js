@@ -19,4 +19,22 @@ export default class userService {
             throw error;
         }
     }
+
+    async cadastrar(user) {
+        try {
+            const response = await this.axios.post('/Usuario/Add', user);
+            return response.data;
+        } catch (error) {
+            throw error;
+        }
+    }
+
+    // async buscarUsuarioPorEmail(email) {
+    //     try {
+    //         const response = await this.axios.get(`/Usuario/BuscarPorEmail/${email}`);
+    //         return response.data;
+    //     } catch (error) {
+    //         throw error;
+    //     }
+    // }
 }
