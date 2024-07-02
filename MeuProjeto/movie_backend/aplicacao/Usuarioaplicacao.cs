@@ -44,6 +44,7 @@ public class UsuarioAplicacao : IUsuarioAplicacao
 
         userId.Nome_Usuario = usuario.Nome_Usuario;
         userId.Nome = usuario.Nome;
+        userId.Id = usuario.Id;
         userId.Sobrenome = usuario.Sobrenome;
         userId.Email = usuario.Email;
         userId.CreatedAt = userId.CreatedAt;

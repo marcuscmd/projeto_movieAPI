@@ -20,6 +20,15 @@ export default class userService {
         }
     }
 
+    async atualizarUsuario(user) {
+        try {
+            const response = await this.axios.put('/Usuario/Update', user);
+            return response.data;
+        } catch (error) {
+            throw error;
+        }
+    }
+
     async cadastrar(user) {
         try {
             const response = await this.axios.post('/Usuario/Add', user);

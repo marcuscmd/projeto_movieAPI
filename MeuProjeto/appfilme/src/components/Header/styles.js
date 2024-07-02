@@ -14,7 +14,12 @@ export const Content = styled.div`
     align-items: center;
     justify-content: space-between;
 
-    /* button {
+    img {
+        height: 40px;
+        width: 180px;
+    }
+
+    button {
         font-size: 1rem;
         color: #000;
         background: var(--entrar);
@@ -27,8 +32,18 @@ export const Content = styled.div`
 
         transition: filter 0.2s;
 
+
+        align-items: center;
+        justify-content: center;
+
+        span {
+            margin-right: 0.25rem;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
         &:hover{
             filter: brightness(0.8);
         }
-    } */
+    }
 `

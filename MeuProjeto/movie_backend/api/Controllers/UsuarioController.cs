@@ -102,11 +102,11 @@ public class UsuarioController : ControllerBase
                 Senha = x.Senha,
             }).ToList();
 
-            var usuarioAutenticado = listUsuario.FirstOrDefault(x => x.Email == usuario.Email && x.Senha == usuario.Senha);
+            var usuarioAutenticado = listUsuario.FirstOrDefault(x => x.Nome_Usuario == usuario.Nome_Usuario && x.Senha == usuario.Senha);
             if (usuarioAutenticado == null)
                 return Unauthorized("Usuário ou senha inválidos.");
 
-            return Ok(new { message = "Login realizado com sucesso." });
+            return Ok(new { message = "Login realizado com sucesso.", user = usuarioAutenticado });
 
         }
         catch (Exception ex)
@@ -126,11 +126,13 @@ public class UsuarioController : ControllerBase
             {
                 Id = usuario.Id,
                 Nome_Usuario = usuario.Nome_Usuario,
+                Email = usuario.Email,
+                Senha = usuario.Senha,
                 Nome = usuario.Nome,
                 Sobrenome = usuario.Sobrenome,
-                Email = usuario.Email,
             };
             await _userAplicacao.Atualizar(usuarioId);
+
             return Ok();
 
         }

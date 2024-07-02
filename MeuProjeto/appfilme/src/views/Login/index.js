@@ -8,15 +8,17 @@ import { Botao } from "../../components/Botao/botao";
 import { ValidarEmail, ValidarSenha } from "../../utils/validar";
 import UserService from '../../services/api';
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../components/auth/authContext";
 
 const user = new UserService();
 
 export const Login = () => {
-    const[loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(false);
     const [form, setForm] = useState({
         nome_Usuario: '',
         senha: '',
     });
+    const { logar } = useAuth();
     const navigate = useNavigate();
 
 
@@ -24,10 +26,11 @@ export const Login = () => {
         event.preventDefault();
         try {
             setLoading(true);
-            const response = await user.logar(form);
+            const response = await logar(form);
             console.log('response', response);
             if (response) {
                 alert('Login realizado com sucesso!');
+                // localStorage.setItem('user', JSON.stringify(response.user));
                 navigate('/home');
             }
             setLoading(false);
@@ -38,7 +41,7 @@ export const Login = () => {
     }
 
     const handleChange = (event) => {
-        setForm({...form, [event.target.name]: event.target.value });
+        setForm({ ...form, [event.target.name]: event.target.value });
     }
 
 
@@ -49,8 +52,8 @@ export const Login = () => {
 
     return (
         <>
-            <Header />
-            <H2>Melhor site de Filmes Piratas 2024</H2>
+            <Header showUser={false} />
+
             <Container>
                 <Form onSubmit={handleSubmit}>
                     <h1>Login</h1>
@@ -71,7 +74,7 @@ export const Login = () => {
                         required
                     />
 
-                    <Botao 
+                    <Botao
                         type='submit'
                         text="Entrar"
                         // onClick={handleSubmit}
